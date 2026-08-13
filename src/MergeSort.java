@@ -2,23 +2,28 @@ class MergeSort {
 
     public static void mergeSort(int[] arr) {
         int inputLength = arr.length;
-        if (inputLength < 2){
+        // base case; stop recursion here
+        if (inputLength < 2){ 
             return;
         }
         int midpointIndex = inputLength/2;
         int[] leftHalf = new int[midpointIndex];
         int[] rightHalf = new int[inputLength - midpointIndex];
-        
+
+        // copy left half into left array
         for (int i = 0; i < midpointIndex; i++){
             leftHalf[i] = arr[i];
         }
+        // copy right half into right array
         for (int i = midpointIndex; i < inputLength; i++){
             rightHalf[i - midpointIndex] = arr[i];
         }
 
+        // recursion
         mergeSort(leftHalf);
         mergeSort(rightHalf);
 
+        // combine subarrays
         merge(arr, leftHalf, rightHalf);
     }
 
