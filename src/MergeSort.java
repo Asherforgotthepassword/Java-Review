@@ -28,7 +28,8 @@ class MergeSort {
     }
 
     public static void merge (int[] arr, int[] leftHalf, int[] rightHalf){
-        // this function basically says: is the current number in left half less than or greater than right half?
+        // this function basically says: is the current number in left 
+        // half less than or greater than right half?
         // increments pointers and effectively merges the 2 subarrays
         int leftSize = leftHalf.length;
         int rightSize = rightHalf.length;
