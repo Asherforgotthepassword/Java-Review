@@ -7,7 +7,7 @@ class MergeSort {
         }
         int midpointIndex = inputLength/2;
         int[] leftHalf = new int[midpointIndex];
-        int[] rightHalf = new int[inputLength = midpointIndex];
+        int[] rightHalf = new int[inputLength - midpointIndex];
         
         for (int i = 0; i < midpointIndex; i++){
             leftHalf[i] = arr[i];
@@ -27,28 +27,29 @@ class MergeSort {
         int rightSize = rightHalf.length;
         
         int i = 0, j = 0, k = 0;
-        while (i < leftSize && j < rightSize){
-            if (leftHalf[i] <= rightHalf[j]){
-                arr[k] = leftHalf[i];
-                i++;
-            }
-            else {
-                arr[k] = rightHalf[j];
-                j++;
-            }
+        while (i < leftSize && j < rightSize) {
+            if (leftHalf[i] <= rightHalf[j]) {
+            arr[k] = leftHalf[i];
+            i++;
+        } else {
+            arr[k] = rightHalf[j];
+            j++;
+        }
+        k++;
+    }
+
+        while (i < leftSize) {
+            arr[k] = leftHalf[i];
+            i++;
             k++;
-            while (i < leftSize){
-                arr[k] = leftHalf[i];
-                i++;
-                k++;
-            }
-            while (j < rightSize){
-                arr[k] = leftHalf[j];
-                j++;
-                k++;
+        }
+
+        while (j < rightSize) {
+            arr[k] = rightHalf[j];
+            j++;
+            k++;
             }
         }
-    }
 
     public static void printArray(int[] nums) {
         for (int i : nums) {
