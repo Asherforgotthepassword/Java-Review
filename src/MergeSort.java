@@ -50,6 +50,12 @@ class MergeSort {
         }
     }
 
+    public static void printArray(int[] nums) {
+        for (int i : nums) {
+            System.out.print(i + " ");
+        }
+    }
+
     public static void main(String[] args) {
         int[] nums = {38, 27, 43, 10, 15, 29};
         System.out.println("Before: ");
