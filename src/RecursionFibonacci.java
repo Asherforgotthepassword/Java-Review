@@ -4,7 +4,7 @@ public class RecursionFibonacci {
         System.out.printf("%s was here\n", bossMan);
 
         // print statement calls recursive function
-        System.out.println(fibonacci(9));
+        System.out.println(fibonacci(6));
     }
 
     public static int fibonacci(int n) {
